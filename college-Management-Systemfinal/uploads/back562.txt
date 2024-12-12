@@ -1,0 +1,12 @@
+FROM openjdk:17-oracle
+//FROM adoptopenjdk:11-jre-hotspot-bionic
+
+ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS
+
+WORKDIR /app
+
+ADD target/*.jar app.jar
+
+EXPOSE 8091
+
+CMD ["java", "-jar", "/app/app.jar"]
