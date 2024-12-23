@@ -41,7 +41,7 @@
             <label for="roleSelect">Description</label> 
           <textarea name="message" id="message" class="form-control mb-3"  formControlName="description"></textarea>
 
-  <button *ngIf="user.role == 'ETUDIANT'"type="submit" value="send" class="btn btn-primary"(click)="createSupportCour()" >Add Support Cour</button>
+  <button *ngIf="user.role == 'ENSEIGNANT'"type="submit" value="send" class="btn btn-primary"(click)="createSupportCour()" >Add Support Cour</button>
 
          
         </form>

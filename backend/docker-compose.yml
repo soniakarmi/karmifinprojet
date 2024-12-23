@@ -6,7 +6,7 @@ services:
     container_name: mysql-db
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: G-Foyer-app
+      MYSQL_DATABASE: Backendsonia
     ports:
       - "3307:3306"
     networks:

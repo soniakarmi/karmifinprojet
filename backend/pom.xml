@@ -10,7 +10,8 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>Backend</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
+	<packaging>jar</packaging>
 	<name>Backend</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -54,6 +55,9 @@
 			<artifactId>json</artifactId>
 			<version>20231013</version>
 		</dependency>
+
+
+
 
 		<!-- JWT Dependencies -->
 		<dependency>
@@ -158,6 +162,15 @@
 				</executions>
 			</plugin>
 
+
+			<!-- SonarQube Plugin -->
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>4.0.0.4121</version>
+			</plugin>
+
+
 			<!-- Maven Surefire Plugin for Tests -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -166,4 +179,18 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<!-- Pour Nexus -->
+	<distributionManagement>
+		<repository>
+			<id>my-repo</id>
+			<url>http://192.186.50.4/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>my-snapshot-repo</id>
+			<url>http://192.186.50.4/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+
 </project>

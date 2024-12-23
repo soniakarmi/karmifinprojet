@@ -106,7 +106,7 @@ export class HeaderComponent implements OnInit {
      if (res.role == 'ENSEIGNANT') {
       this.router.navigateByUrl('/courses');
     } else if(res.role == 'PARENT') {
-      this.router.navigateByUrl('/classe');
+      this.router.navigateByUrl('/courses');
     }
   else{
     this.router.navigateByUrl('/courses');

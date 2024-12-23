@@ -34,7 +34,7 @@ export const routes: Routes = [
             {path:"reclamation",component:ReclamationComponent},
             {path:'courses',component:CourComponent},
             {path:"detailcour/:id",component:DetailcourComponent},
-            {path:"detailcourprof/:id",component:DetailcourprofComponent},
+           // {path:"detailcourprof/:id",component:DetailcourprofComponent},
             {path:'supportcour',component:SupportcourComponent},
             {path:'quizquestion/:id',component:QuizQuestionComponent},
             {path:'paiement',component:PaiementComponent},     

@@ -12,6 +12,7 @@ export class PaiementComponent implements OnInit {
   paiements: Paiement[] = []; 
   montant: number = 0;
   etudiantId: number = 0;
+  Id: number = 0;
   paymentLink: string = '';
   errorMessage: string = ''; 
 

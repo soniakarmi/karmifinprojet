@@ -1,0 +1,49 @@
+version: '3.8'
+networks:
+  pfe:
+    driver: bridge  
+services:
+  frontend:
+    container_name: pfe_frontend
+    build:
+      context: ./First-app/E-learning
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - pfe
+
+  backend:
+    container_name: pfe_backend
+    build:
+      context: ./college-Management-System
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/Backendkarmi
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    depends_on:
+      - mysql
+    networks:
+      - pfe
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    environment:
+      MYSQL_DATABASE: Backendkarmi
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql 
+      - ./src/main/resources/scripts:/docker-entrypoint-initdb.d
+    networks:
+      - pfe
+
+volumes:
+  mysql_data:  

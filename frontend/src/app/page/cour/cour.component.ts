@@ -84,7 +84,7 @@ export class CourComponent implements OnInit {
 
    if(this.user=="ENSEIGNANT"){
     // this.router.navigate(['detailcour',id])
-    this.router.navigate(['detailcourprof', id]);
+    this.router.navigate(['supportcour']);
      
  
     }
